@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "${id}",
+    "name": "${name}",
+    "description": "auto beg for ranks in hypixel lobby",
+    "version": "${version}",
+    "mcversion": "${mcVersionStr}",
+    "url": "https://github.com/Redths-Gay-Club/HypixelRankBegger",
+    "updateUrl": "",
+    "authorList": [
+      "RTX4O9O"
+    ],
+    "credits": "",
+    "logoFile": "mod-icon.png",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
