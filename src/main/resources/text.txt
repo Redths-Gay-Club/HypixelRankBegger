@@ -6,7 +6,7 @@ give me some ${things} pls
 gimme some free ${things} please
 is there any1 giving away free ${things}
 is there any1 giving away ${things}
-is there anyone giving awai free ${things}
+is there anyone giving away free ${things}
 free ${things} ?
 free ${things} pls
 i need free ${things} giveaway

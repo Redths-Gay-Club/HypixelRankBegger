@@ -15,8 +15,14 @@ public class Begger {
 
     public static void load() {
         try {
-            Path path = Paths.get(Begger.class.getResource("text.txt").toURI());
-            lines = Files.readAllLines(path);
+//            NetworkUtils.getString("https://raw.githubusercontent.com/Redths-Gay-Club/HypixelRankBegger/main/src/main/resources/text.txt").let {
+//                val scanner = Scanner(it)
+//                while (scanner.hasNextLine()) {
+//
+//                }
+//                scanner.close()
+//}
+//            lines = Files.readAllLines(path);
         } catch (Exception e) {
             e.printStackTrace();
         }
