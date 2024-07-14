@@ -1,6 +1,7 @@
 package org.redthsgayclub.hypixelrankbegger;
 
 import cc.polyfrost.oneconfig.events.EventManager;
+import cc.polyfrost.oneconfig.events.event.RenderEvent;
 import cc.polyfrost.oneconfig.events.event.Stage;
 import cc.polyfrost.oneconfig.events.event.TickEvent;
 import cc.polyfrost.oneconfig.libs.eventbus.Subscribe;
@@ -27,7 +28,7 @@ public class HypixelRankBegger {
     public static HypixelRankBegger INSTANCE; // Adds the instance of the mod, so we can access other variables.
     public static PolyConfig config;
 
-    private static int cooldown;
+    private static long lastSend;
 
     // Register the config and commands.
     @Mod.EventHandler
@@ -39,11 +40,10 @@ public class HypixelRankBegger {
     }
 
     @Subscribe
-    public void onTick(TickEvent event) {
+    public void onTick(RenderEvent event) {
         if(event.stage != Stage.START) return;
-        cooldown++;
-        if(cooldown >= PolyConfig.spammingSpeed) {
-            cooldown = 0;
+        if(System.currentTimeMillis() - lastSend >= PolyConfig.spammingSpeed) {
+            lastSend = System.currentTimeMillis();
             if(PolyConfig.isBegging) {
                 Begger.beg();
             }
