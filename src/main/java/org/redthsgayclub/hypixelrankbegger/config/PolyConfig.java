@@ -31,7 +31,7 @@ public class PolyConfig extends Config {
     public static String beggingItem = "vip rank";
 
     public PolyConfig() {
-        super(new Mod(HypixelRankBegger.NAME, ModType.UTIL_QOL), HypixelRankBegger.MODID + ".json");
+        super(new Mod(HypixelRankBegger.NAME, ModType.HYPIXEL), HypixelRankBegger.MODID + ".json");
         initialize();
     }
 }
