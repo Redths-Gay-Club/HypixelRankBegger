@@ -46,7 +46,7 @@ public class HypixelRankBegger {
 
     public long ranTime(float range, int value) {
         Random random = new Random();
-        return (long) ((value + (random.nextFloat() - 0.5F) * 2 * range) * 1000L);
+        return (long) (value + random.nextFloat(-range, range)) * 1000L;
     }
 
 
