@@ -9,6 +9,8 @@ import org.redthsgayclub.hypixelrankbegger.config.PolyConfig;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
+import java.util.Random;
+
 @Mod(modid = HypixelRankBegger.MODID, name = HypixelRankBegger.NAME, version = HypixelRankBegger.VERSION)
 public class HypixelRankBegger {
 
@@ -21,6 +23,7 @@ public class HypixelRankBegger {
 
     private static long targetTime;
 
+
     @Mod.EventHandler
     public void onInit(FMLInitializationEvent event) {
         config = new PolyConfig();
@@ -32,15 +35,19 @@ public class HypixelRankBegger {
 
     @Subscribe
     public void onTick(RenderEvent event) {
-        if(event.stage != Stage.START) return;
-        if(System.currentTimeMillis() >= targetTime) {
-            targetTime = System.currentTimeMillis() + PolyConfig.spammingSpeed;
-            if(PolyConfig.isBegging) {
+        if (event.stage != Stage.START) return;
+        if (System.currentTimeMillis() >= targetTime) {
+            targetTime = System.currentTimeMillis() + ranTime(PolyConfig.randomDelayRange, PolyConfig.spammingSpeed);
+            if (PolyConfig.isBegging) {
                 Begger.beg();
             }
         }
     }
 
+    public long ranTime(float range, int value) {
+        Random random = new Random();
+        return (long) ((value + (random.nextFloat() - 0.5F) * 2 * range) * 1000L);
+    }
 
 
 }

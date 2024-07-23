@@ -19,11 +19,18 @@ public class PolyConfig extends Config {
     public static boolean isBegging = false;
 
     @Slider(
-            name = "Spamming Speed (ms)",
-            min = 200, // Minimum value
-            max = 5000
+            name = "Spamming Speed (sec)",
+            min = 1, // Minimum value
+            max = 60
     )
-    public static int spammingSpeed = 2000; // Default value
+    public static int spammingSpeed = 5;
+
+    @Slider(
+            name = "Random Delay Range (sec)",
+            min = 1, // Minimum value
+            max = 10
+    )
+    public static float randomDelayRange = 5;
 
     @Text(
             name = "Begging item"
